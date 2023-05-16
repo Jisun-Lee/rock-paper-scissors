@@ -3,15 +3,30 @@
   <head>
     <meta charset="utf-8">
     <title>Rock Paper Scissors</title>
-    <script src="scripts/main.js"></script>
+    <script src="main.js"></script>
     <link rel="stylesheet" href="style.css">
   </head>
 
 <body>
   <!--Welcome to Rock, Paper, Scissors!-->
+  <h1 class="header">Welcome to Rock, Paper, Scissors!</h1>
   <!--text box with the rules of the game (tell them that ties don't count towards the 5 rounds)-->
+  <p id="rules">
+    Best of 5, but ties don't count.
+  </p>
   <!--make an input field for the player to choose rock/paper/scissors-->
-  <!--make a box displaying the result of each round-->
+    <p>When you're ready for the ride of your life,<br>
+      hit that "Play!" button right down there...</p>
+    <!-- 
+    <input type="text" id="playerInput"> Use that later?
+    -->
+    <button id="play" onclick="playGame()">Play!</button>
+    <!--make a box displaying the result of each round-->
+  <div> 
+    <p id="gameStatus"> </p>
+    <p id="roundStatus"></p>
+  </div>
+
   <!--make two boxes: 1) player win total 2) computer win total-->
   <!--button that says 'Reset Game'-->
 </body>
