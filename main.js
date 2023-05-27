@@ -3,6 +3,18 @@ let computerSelection = '';
 let playerTally = 0; 
 let computerTally = 0;
 
+const buttonContainer = document.querySelector('.buttonContainer');
+const rock = document.querySelector('.rock');
+const paper = document.querySelector('.paper');
+const scissors = document.querySelector('.scissors');
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        console.log(button.class);
+    });
+})
+
 function getInput() {
     let input = prompt("Type your try here:", "rock, paper, scissors");
     return playerSelection = input.toLowerCase();
