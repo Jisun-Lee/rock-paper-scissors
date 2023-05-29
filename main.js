@@ -9,20 +9,19 @@ const paper = document.querySelector('.paper');
 const scissors = document.querySelector('.scissors');
 const buttons = document.querySelectorAll('button');
 
-buttons.forEach((button) => {
-    button.addEventListener('click', () => {
-        console.log(button.class);
-    });
-})
+rock.onclick = () => playGame('rock');
+paper.onclick = () => playGame('paper');
+scissors.onclick = () => playGame('scissors');
 
-function getInput() {
+
+
+/*function getInput() {
     let input = prompt("Type your try here:", "rock, paper, scissors");
     return playerSelection = input.toLowerCase();
-}
+}*/
 
-function playGame() {
+function playGame(playerSelection) {
     for (let counter = 5; counter >= 0; counter--) {
-        getInput();
         playRound(playerSelection);
         if (playerSelection == computerSelection || roundStatus == 'typo') {
             counter++;
@@ -58,9 +57,6 @@ function getNewTry () {
     console.log(playerSelection);
 }
 
-
-
-
 function playRound(playerSelection) {
     computerSelection = getComputerChoice();
     console.log(playerSelection);
@@ -76,30 +72,18 @@ function playRound(playerSelection) {
         `Tie! Try again. Deep breath, you can do this.`;
         if (playerSelection == computerSelection) {
             roundStatus = tieMsg;
-        } else if ((playerSelection == 'rock') && 
-            (computerSelection == 'scissors')) {
-            roundStatus = winMsg;
-            playerTally += 1;
-        } else if ((playerSelection == 'rock') && 
-            (computerSelection == 'paper')) {
-            roundStatus = loseMsg;
-            computerTally += 1;
-        } else if ((playerSelection == 'paper') && (
-            computerSelection == 'scissors')) {
-            roundStatus = loseMsg;
-            computerTally += 1;
-        } else if ((playerSelection == 'paper') && 
-            (computerSelection == 'rock')) {
-            roundStatus = winMsg;
-            playerTally += 1;
-        } else if ((playerSelection == 'scissors') && 
-            (computerSelection == 'paper')) {
-            roundStatus = winMsg;
-            playerTally += 1;
-        } else if ((playerSelection == 'scissors') && (
-            computerSelection == 'rock')) {
-            roundStatus = loseMsg;
-            computerTally += 1;
+        } else if 
+            ((playerSelection == 'rock') && (computerSelection == 'scissors') ||
+            (playerSelection == 'paper') && (computerSelection == 'rock') ||
+            (playerSelection == 'scissors') && (computerSelection == 'paper')) {
+                roundStatus = winMsg;
+                playerTally += 1;
+        } else if 
+            ((playerSelection == 'rock') && (computerSelection == 'paper') ||
+            (playerSelection == 'paper') && (computerSelection == 'scissors') ||
+            (playerSelection == 'scissors') && (computerSelection == 'rock')) {
+                roundStatus = loseMsg;
+                computerTally += 1;
         } else {
             roundStatus = 'typo';
             console.log('Check your spelling, eh?');
