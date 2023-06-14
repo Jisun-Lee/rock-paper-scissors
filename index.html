@@ -10,12 +10,22 @@
 <body>
   <h1 class="header">Welcome to Rock, Paper, Scissors!</h1>
   <p id="rules">
-    First to 5.
+    First to 5. Click any button to play!
   </p>
   <div class="buttonContainer">
-    <button type="button" class="rock"><img src="./images/rock.jpg"></button>
-    <button type="button" class="paper"><img src="./images/paper.jpg"></button>
-    <button type="button" class="scissors"><img src="./images/scissors.jpg"></button>
+    <div id="rock" class="button">
+      <img src="./images/rock.jpg" alt="rock"/>
+    </div>
+    <div id="paper" class="button">
+      <img src="./images/paper.jpg" alt="paper"/>
+    </div>
+    <div id="scissors" class="button">
+      <img src="./images/scissors.jpg" alt="scissors"/>
+    </div>
+  </div>
+  <div class="statusBox">
+    <div class="round"></div>
+    <div class="gameOver"></div>
   </div>
   Image by <a href="https://www.freepik.com/free-vector/pack-hand-gestures_1040505.htm#page=3&query=rock%20paper%20scissors&position=34&from_view=search&track=ais">Freepik</a>
 </body>
