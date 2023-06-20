@@ -16,7 +16,6 @@ const tally = document.createElement('div');
 const resultGame = document.createElement('div');
 const resetButton = document.createElement('button');
 
-//puts game results into .statusBox div
 round.appendChild(roundResults);
 round.appendChild(tally);
 gameOver.appendChild(resultGame);
@@ -26,33 +25,17 @@ gameOver.appendChild(resetButton);
 gameOver.style.display = 'none';
 resetButton.textContent = 'Wanna try again?';
 
-//adds event listeners to each button, run game functions
+//uses node list for each button, runs game functions
 buttons.forEach((button) => {
     button.addEventListener("click", () => {
       const img = button.querySelector('img');
       playerSelection = img.alt;
-  
       playRound(img.alt);
-  
       if (playerTally === 5 || computerTally === 5) {
         gameStatus();
       }
     });
   });
-
-/*rock.addEventListener("click", () => {
-    playRound('rock');
-    gameStatus();
-    });
-paper.addEventListener("click", () => {
-    playRound('paper');
-    gameStatus();
-    });
-scissors.addEventListener("click", () => {
-    playRound('scissors');
-    gameStatus();
-    });*/
-
 
 function playRound(playerSelection) {
     computerSelection = getComputerSelection();   
@@ -90,7 +73,6 @@ function playRound(playerSelection) {
         `You: ${playerTally} Computer: ${computerTally} Tie: ${tieTally}`;
 }  
 
-//better as a switch statement?
 function getComputerSelection() {
     let rollDice = Math.random();
     if (rollDice <= 0.3333333333333333) {
@@ -107,7 +89,6 @@ function capitalize(str) {
   }
 
 function gameStatus() {
-    //clearScreen = () => {buttonContainer.style.display = 'none'};
     if (playerTally === 5) {
         statusMsg = 
         'You won! Maybe there is hope for humanity, after all.';
@@ -125,8 +106,6 @@ function gameStatus() {
     resultGame.textContent = statusMsg;
 }
 
-//when do I need to reset the counter?
-//how to I erase the reset div content after the player starts playing again...?
 function gameEnd() {
     resetButton.addEventListener('click', function() {
         playerTally = 0;
@@ -136,29 +115,3 @@ function gameEnd() {
     }, { once: true });
 
 }
-
-/*function playRound(playerSelection) {
-    for (let counter = 5; counter >= 0; counter--) {
-        playRound(playerSelection);
-        if (playerSelection == computerSelection) {
-            counter++;
-        } else if (playerTally == 3) {
-            console.log(
-                'You win the entire game! Maybe there is hope for humanity, after all.');
-            break;
-        } else if (computerTally == 2 && playerTally == 2) {
-            console.log(
-                'The suspense...! Who will win best of 5 rounds?!');
-        } else if (computerTally == 3) {
-            console.log(
-                'It is crushing to have to tell you this, but you have lost to random chance.');
-            break;
-        } else {
-            console.log('Keep going!');
-        }
-        console.log(`Human victories: ${playerTally}`);
-        console.log(`Computer victories: ${computerTally}`);
-        console.log(`Total tries left: ` + (counter - 1));
-    }
-}
-*/

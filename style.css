@@ -1,0 +1,43 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    font-family: 'Nanum Pen Script';
+    font-family: 'Neucha';
+    background-color: #48233C;
+    color: white;
+}
+
+.header {
+  font-family: 'Amatic SC';
+  font-size: 120px;
+  margin: 5% auto;
+
+}
+
+.rules {
+  font-size: 36px;
+  margin: 3%;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.button {
+  margin: 8px;
+}
+  
+.statusBox {
+  margin-bottom: 10%;
+  font-size: 24px;
+}
+
+  /*want to make this appear at the bottom of the page*/
+.imgCredit {
+  flex: 1;
+  margin-top: auto;
+}
+
