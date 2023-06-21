@@ -20,7 +20,7 @@ body {
 .rules {
   font-size: 48px;
   font-weight: 400;
-  margin: auto auto 2%;
+  margin: 64px auto 2%;
 }
 
 .buttonContainer {
@@ -62,6 +62,9 @@ p {
   font-size: 32px;
   width: 75%;
 }
+
+
+
 
 .resetButton {
   font-family: 'Amatic SC';
