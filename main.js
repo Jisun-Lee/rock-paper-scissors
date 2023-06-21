@@ -134,7 +134,6 @@ function gameEnd() {
     resetButton.addEventListener('click', function() {
         playerTally = 0;
         computerTally = 0;
-
         statusBox.style.display = 'none';
     }, { once: true });
 

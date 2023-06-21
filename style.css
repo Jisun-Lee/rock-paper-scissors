@@ -1,4 +1,5 @@
 body {
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -71,8 +72,8 @@ p {
   background-color: #D7F0F3;
 }
 
-.imgCredit {
-  margin-top: 5%;
+footer {
+  margin-top: auto;
 }
 
 a {
