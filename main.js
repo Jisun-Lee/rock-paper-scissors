@@ -5,21 +5,40 @@ let computerTally = 0;
 let tieTally = 0;
 
 let buttons = document.querySelectorAll('.button');
-console.log(buttons);
 const buttonContainer = document.querySelector('.buttonContainer');
 const statusBox = document.querySelector('.statusBox');
-const round = document.querySelector('.round');
-const gameOver = document.querySelector('.gameOver');
 
 const roundResults = document.createElement('div');
+const players = document.createElement('div');
+const p1 = document.createElement('p');
+const p2 = document.createElement('p');
+const p3 = document.createElement('p');
 const tally = document.createElement('div');
-const resultGame = document.createElement('div');
+const playerScore = document.createElement('p');
+const computerScore = document.createElement('p');
+const tieScore = document.createElement('p');
+const gameOver = document.createElement('div');
+const resultGame = document.createElement('p');
 const resetButton = document.createElement('button');
 
-round.appendChild(roundResults);
-round.appendChild(tally);
+statusBox.appendChild(roundResults);
+statusBox.appendChild(players);
+players.appendChild(p1);
+players.appendChild(p2);
+players.appendChild(p3);
+statusBox.appendChild(tally);
+tally.appendChild(playerScore);
+tally.appendChild(computerScore);
+tally.appendChild(tieScore);
+statusBox.appendChild(gameOver);                            
 gameOver.appendChild(resultGame);
 gameOver.appendChild(resetButton);
+
+roundResults.className = 'roundResults';
+tally.className = 'tally';
+players.className = 'players';
+resultGame.className = 'resultGame';
+resetButton.className = 'resetButton';
 
 //creates invisible reset button for later, when the game ends
 gameOver.style.display = 'none';
@@ -43,6 +62,7 @@ function playRound(playerSelection) {
         playerTally = 0;
         computerTally = 0;
         statusBox.style.display = 'none';
+        gameOver.style.display = 'none';
     } else if 
         ((playerSelection == 'rock') && (computerSelection == 'scissors') ||
         (playerSelection == 'paper') && (computerSelection == 'rock') ||
@@ -69,8 +89,12 @@ function playRound(playerSelection) {
         roundResults.textContent = 
         `Tie! Try again. Deep breath, you can do this.`;
     }
-    tally.textContent = 
-        `You: ${playerTally} Computer: ${computerTally} Tie: ${tieTally}`;
+    p1.textContent = 'You:';
+    p2.textContent = 'Computer';
+    p3.textContent = 'Tie:';
+    playerScore.textContent = `${playerTally}`;
+    computerScore.textContent = `${computerTally}`;
+    tieScore.textContent = `${tieTally}`;
 }  
 
 function getComputerSelection() {
